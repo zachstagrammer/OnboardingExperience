@@ -82,19 +82,19 @@ namespace OnboardingExperience
 
         static string AskPinNumber(string question, int length)
         {
-            string numberString = null;
+            string numString = null;
 
-            while (numberString == null)
+            while (numString == null)
             {
                 var response = AskQuestion(question);
 
                 if (response.Length == length && Int32.TryParse(response, out int _))
                 {
-                    numberString = response;
+                    numString = response;
                 }
             }
 
-            return numberString;
+            return numString;
 
         }
     }
