@@ -13,7 +13,7 @@ namespace OnboardingExperience
             Console.WriteLine("Hello! Welcome to the Onboarding Experience");
 
             user.FirstName = AskQuestion("What is your first name?");
-            Console.WriteLine("Awesome, your name is " + user.FirstName);
+            Console.WriteLine("Awesome, your first name is: " + user.FirstName);
 
             user.LastName = AskQuestion("What is your last name?");
             Console.WriteLine("Excellent! Your full name is: " + user.FirstName + " " + user.LastName);
@@ -22,10 +22,12 @@ namespace OnboardingExperience
             Console.WriteLine("You are have requested access for the " + user.AType + " account");
 
             user.IsAccountOwner = AskBoolQuestion("Are you the account owner? ");
-            Console.WriteLine("You are: " + user.IsAccountOwner);
 
             user.PinNumber = AskPinNumber("What is your 4-digit pin number:", 4);
-            Console.WriteLine("Awesome! You entered: " + user.PinNumber);
+            Console.WriteLine("Awesome! Your new 4-digit PIN is: " + user.PinNumber);
+
+            Console.WriteLine();
+            Console.WriteLine("Press \"Enter\" to quit application");
 
             Console.ReadLine();
         }
@@ -47,6 +49,7 @@ namespace OnboardingExperience
                 if (response == "y")
                 {
                     isAccountOwner = true;
+                    Console.WriteLine("Welcome! You are the account owner.");
                 }
                 else if (response == "n")
                 {
